@@ -1,0 +1,24 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+:root {
+  @include mat.all-component-themes(
+      mat.define-theme(
+          (
+            color: (
+              theme-type: light,
+              primary: mat.$blue-palette,
+              tertiary: mat.$blue-palette,
+            ),
+            typography: (
+              plain-family: 'Inter, sans-serif',
+              brand-family: 'Inter, sans-serif',
+            ),
+            density: (
+              scale: 0,
+            ),
+          )
+      )
+  );
+}

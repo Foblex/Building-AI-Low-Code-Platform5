@@ -1,0 +1,31 @@
+.mat-mdc-menu-panel {
+  --mat-menu-container-shape: var(--radius);
+  --mat-menu-container-color: hsl(var(--background) / 1);
+  --mat-menu-container-elevation-shadow: var(--shadow);
+
+  .mat-mdc-menu-content {
+
+    .mat-mdc-menu-item {
+      min-height: var(--control-height);
+      padding: 0 1rem;
+      --mat-menu-item-label-text-color: hsl(var(--foreground) / 1);
+
+      .mat-mdc-menu-item-text {
+        //--mat-menu-item-label-text-size: var(--fs-sm);
+      }
+
+      &:not(.mat-mdc-menu-item--disabled) {
+        cursor: pointer;
+
+        &:hover {
+          background-color: hsl(var(--primary) / 0.3);
+        }
+
+        &:active {
+          background-color: hsl(var(--primary) / 0.3);
+          color: hsl(var(--primary) / 1);
+        }
+      }
+    }
+  }
+}

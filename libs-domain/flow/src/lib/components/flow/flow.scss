@@ -1,0 +1,57 @@
+::ng-deep f-flow {
+  background-color: hsl(var(--card) / 1);
+
+  .f-connection {
+    --connection-color: hsl(var(--border) / 1);
+
+    &.f-selected {
+      --connection-color: hsl(var(--primary) / 1);
+
+      .f-connection-path {
+        stroke-dashoffset: 50;
+        stroke-dasharray: 5, 5;
+        animation: dash 5s linear infinite;
+      }
+
+      remove-connection-button {
+        display: block;
+      }
+    }
+
+    .f-connection-drag-handle {
+      fill: transparent;
+    }
+
+    .f-connection-selection {
+      stroke-width: 10;
+    }
+
+    .f-connection-path {
+      stroke: var(--connection-color);
+      stroke-width: 2;
+    }
+
+    marker {
+      path {
+        fill: var(--connection-color);
+      }
+    }
+  }
+
+  .f-line-alignment {
+    .f-line {
+      background-color: hsl(var(--border) / 1);
+    }
+  }
+}
+
+.f-selection-area {
+  background-color: hsl(var(--primary) / 0.1);
+  border: 1px dashed hsl(var(--primary) / 1);
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

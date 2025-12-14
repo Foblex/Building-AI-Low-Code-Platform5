@@ -1,0 +1,5 @@
+@for (node of nodes; track node.type) {
+  <div class="node-palette-item" fExternalItem [fData]="node.type" [matTooltip]="node.name" matTooltipPosition="right">
+    <mat-icon>{{ node.icon }}</mat-icon>
+  </div>
+}

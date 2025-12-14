@@ -1,0 +1,19 @@
+[maticonsuffix] {
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-0);
+  padding: 2px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  background-color: transparent;
+
+  &:hover {
+    background-color: var(--color-surface-2-hover);
+    color: var(--text-primary);
+  }
+
+  &:active {
+    background-color: var(--color-surface-2);
+  }
+}

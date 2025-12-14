@@ -1,0 +1,6 @@
+@mixin surface {
+  background-color: hsl(var(--card));
+  border-radius: var(--radius);
+  box-shadow: var(--ring-offset-shadow, 0 0 #0000), var(--ring-shadow, 0 0 #0000), var(--shadow);
+  border: 1px solid hsl(var(--border));
+}

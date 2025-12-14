@@ -1,0 +1,51 @@
+:host {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  height: 48px;
+  padding: 8px;
+  gap: 8px;
+
+  background-color: hsl(var(--card) / 1);
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border) / 1);
+  box-shadow: var(--shadow);
+}
+
+.separator {
+  width: 2px;
+  height: 90%;
+  background-color: hsl(var(--border) / 1);
+  margin: 0 6px;
+  border-radius: 2px;
+}
+
+.mat-mdc-icon-button {
+  padding: 9px !important;
+}
+
+.theme-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  margin-right: 12px;
+  border: 1px solid hsl(var(--border) / 1);
+  box-shadow: 0 6px 12px -6px hsl(var(--foreground) / 0.25);
+}
+
+.theme-label {
+  flex: 1;
+  font-weight: 600;
+  color: hsl(var(--foreground) / 0.92);
+}
+
+.theme-check {
+  color: hsl(var(--primary) / 1);
+  margin-left: 6px;
+}

@@ -1,0 +1,44 @@
+.configuration-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid hsl(var(--border) / 1);
+  padding: 1rem;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.configuration-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 8px;
+
+  .configuration-group-actions {
+    position: absolute;
+    right: 0;
+    display: flex;
+    gap: 8px;
+  }
+}
+
+.configuration-group-title {
+  font-size: 11px;
+  color: hsl(var(--foreground) / 1);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.configuration-group-row {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  position: relative;
+}

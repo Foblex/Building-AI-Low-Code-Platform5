@@ -1,0 +1,49 @@
+@use "index" as *;
+
+@use "styles/material-overrides";
+
+@use "styles/configuration";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  //scrollbar-width: thin;
+  //scrollbar-color: rgba(0, 0, 0, 0.4) transparent;
+  scrollbar-gutter: stable;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+}
+
+.flex-space {
+  flex: 1;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 1px;
+}
+
+//.cdk-overlay-backdrop-showing {
+//  background-color: rgba(0, 0, 0, 0.2) !important;
+//  opacity: 1 !important;
+//}

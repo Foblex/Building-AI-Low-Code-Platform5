@@ -1,0 +1,75 @@
+@let model = viewModel();
+@if (model) {
+  <f-flow fDraggable
+          (fLoaded)="editorLoaded()"
+          (fCreateNode)="createNode($event)"
+          (fCreateConnection)="createConnection($event)"
+          (fReassignConnection)="reassignConnection($event)"
+          (fMoveNodes)="moveNodes($event)"
+          (fSelectionChange)="changeSelection($event)">
+    <f-background>
+      <flow-background />
+    </f-background>
+    <f-line-alignment />
+    <f-selection-area />
+
+    <f-canvas fZoom (fCanvasChange)="changeCanvasTransform($event)"
+              [debounceTime]="300"
+              [scale]="model?.transform?.scale"
+              [position]="model?.transform?.position">
+
+      <f-connection-for-create [fOffset]="8"
+                               [fRadius]="2"
+                               [fType]="'adaptive-curve'">
+        <svg viewBox="0 0 700 700" fMarker [type]="eMarkerType.END" [height]="5" [width]="5" [refX]="4" [refY]="2.5">
+          <path d="M0,0L700,350L0,700L150,350z" />
+        </svg>
+      </f-connection-for-create>
+
+      @for (connection of connections(); track connection.key) {
+        <f-connection [fConnectionId]="connection.key"
+                      [fOffset]="8"
+                      [fRadius]="2"
+                      [fType]="'adaptive-curve'"
+                      [fOutputId]="connection.source"
+                      [fInputId]="connection.target">
+          <svg viewBox="0 0 700 700" fMarker [type]="eMarkerType.END" [height]="5" [width]="5" [refX]="4" [refY]="2.5">
+            <path d="M0,0L700,350L0,700L150,350z" />
+          </svg>
+          <svg viewBox="0 0 700 700" fMarker [type]="eMarkerType.SELECTED_END" [height]="5" [width]="5" [refX]="4"
+               [refY]="2.5">
+            <path d="M0,0L700,350L0,700L150,350z" />
+          </svg>
+          @if (connection.type === eConnectionTypes.IF_ELSE) {
+            <condition-connection-toolbar [key]="connection.key" [configuration]="connection.configuration" fDragBlocker fLockedContext fConnectionContent align="along" position="0.4"/>
+          }
+          <remove-connection-button [key]="connection.key" fDragBlocker fLockedContext fConnectionContent [position]="connection.type === eConnectionTypes.IF_ELSE ? 0.7 : 0.5"></remove-connection-button>
+        </f-connection>
+      }
+
+      @for (node of nodes(); track node.key) {
+        <node fNode
+              fNodeInput
+              [fNodeId]="node.key"
+              fInputConnectableSide="left"
+              [fInputId]="node.key"
+              [fInputDisabled]="node.type === eNodeTypes.START"
+              [viewModel]="node"
+              fDragHandle
+              [fNodePosition]="node.position" />
+      }
+    </f-canvas>
+  </f-flow>
+
+  <node-palette />
+
+  <flow-toolbar fDragBlocker (resetScaleAndCenter)="resetScaleAndCenter()" (fitToScreen)="fitToScreen()" (resetFlow)="resetFlow()" (executeFlow)="executeFlow()" (importFlow)="importFlow($event)" (exportFlow)="exportFlow()" />
+
+  <flow-github-cta />
+
+  @if (model.selection?.nodes?.length) {
+    <configuration-panel fDragBlocker>
+      <node-configuration />
+    </configuration-panel>
+  }
+}

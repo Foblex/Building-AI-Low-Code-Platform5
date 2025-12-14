@@ -1,0 +1,19 @@
+<ng-container [formGroup]="formGroup">
+  <configuration-group-header title="Context" />
+  <mat-form-field>
+        <textarea matInput formControlName="prompt"
+                  placeholder="Type prompt..."
+                  [cdkTextareaAutosize]="true"
+                  cdkAutosizeMinRows="5"
+                  cdkAutosizeMaxRows="5">
+        </textarea>
+  </mat-form-field>
+  <mat-form-field>
+        <textarea matInput formControlName="expectedSchema"
+                  placeholder="e.g., JSON schema"
+                  [cdkTextareaAutosize]="true"
+                  cdkAutosizeMinRows="3"
+                  cdkAutosizeMaxRows="3">
+        </textarea>
+  </mat-form-field>
+</ng-container>

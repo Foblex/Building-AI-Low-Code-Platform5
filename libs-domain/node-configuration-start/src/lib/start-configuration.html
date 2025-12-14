@@ -1,0 +1,11 @@
+<ng-container [formGroup]="formGroup">
+  <configuration-group-header title="Start Configuration" />
+  <mat-form-field>
+        <textarea matInput formControlName="incomingData"
+                  placeholder="Enter initial data (JSON or text)..."
+                  [cdkTextareaAutosize]="true"
+                  cdkAutosizeMinRows="5"
+                  cdkAutosizeMaxRows="10">
+        </textarea>
+  </mat-form-field>
+</ng-container>

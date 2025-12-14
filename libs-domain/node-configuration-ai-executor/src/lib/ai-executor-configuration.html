@@ -1,0 +1,14 @@
+<ng-container [formGroup]="formGroup">
+  <configuration-group-header title="Context" />
+  <mat-form-field>
+        <textarea matInput formControlName="prompt"
+                  placeholder="Type prompt..."
+                  [cdkTextareaAutosize]="true"
+                  cdkAutosizeMinRows="5"
+                  cdkAutosizeMaxRows="5">
+        </textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="e.g., summary, code" formControlName="resultType" />
+  </mat-form-field>
+</ng-container>

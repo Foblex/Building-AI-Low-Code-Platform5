@@ -1,0 +1,11 @@
+:host {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+
+  border-left: 1px solid hsl(var(--border) / 1);
+  background-color: hsl(var(--background) / 1);
+}
+

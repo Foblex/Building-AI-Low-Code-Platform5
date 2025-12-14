@@ -1,0 +1,47 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@core": ["libs/core/src/index.ts"],
+      "@foblex/flow-animator": ["libs/f-flow-animator/src/index.ts"],
+      "@flow-state": ["libs-domain/flow-state/src/index.ts"],
+      "@flow-root": ["libs-domain/flow/src/index.ts"],
+      "@flow-execution": ["libs-domain/flow-execution/src/index.ts"],
+      "@shared-components": ["libs/shared-components/src/index.ts"],
+      "@common-styles": ["libs/common-styles/src/index.ts"],
+      "@node-configuration-ai-parser": [
+        "libs-domain/node-configuration-ai-parser/src/index.ts"
+      ],
+      "@node-configuration-ai-validator": [
+        "libs-domain/node-configuration-ai-validator/src/index.ts"
+      ],
+      "@node-configuration-ai-executor": [
+        "libs-domain/node-configuration-ai-executor/src/index.ts"
+      ],
+      "@node-configuration-conditional-branch": [
+        "libs-domain/node-configuration-conditional-branch/src/index.ts"
+      ],
+      "@node-configuration-logger": [
+        "libs-domain/node-configuration-logger/src/index.ts"
+      ],
+      "@node-configuration-start": [
+        "libs-domain/node-configuration-start/src/index.ts"
+      ],
+      "@server/exceptions": ["server/exceptions/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

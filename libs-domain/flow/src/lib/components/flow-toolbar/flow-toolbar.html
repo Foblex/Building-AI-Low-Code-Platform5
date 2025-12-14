@@ -1,0 +1,64 @@
+<button mat-icon-button matTooltip="Undo" [disabled]="!canUndo()" (click)="undo()">
+  <mat-icon>undo</mat-icon>
+</button>
+<button mat-icon-button matTooltip="Redo" [disabled]="!canRedo()" (click)="redo()">
+  <mat-icon>redo</mat-icon>
+</button>
+<button mat-icon-button matTooltip="Reset Scale & Center" (click)="resetScaleAndCenter.emit()">
+  <mat-icon>filter_center_focus</mat-icon>
+</button>
+<button mat-icon-button matTooltip="Fit to screen" (click)="fitToScreen.emit()">
+  <mat-icon>screenshot_monitor</mat-icon>
+</button>
+
+<div class="separator"></div>
+
+<button mat-icon-button [matMenuTriggerFor]="themeMenu"
+        matTooltip="Theme"
+        matTooltipPosition="below"
+        aria-label="Change theme">
+  <mat-icon>{{ currentThemeIcon }}</mat-icon>
+</button>
+
+<mat-menu #themeMenu="matMenu">
+  @for (theme of themes; track theme.name) {
+    <button mat-menu-item (click)="setTheme(theme.name)"
+            [disabled]="currentTheme === theme.name">
+      <span class="theme-swatch" [style.background-image]="theme.swatch"></span>
+      <span class="theme-label">{{ theme.label }}</span>
+      @if (currentTheme === theme.name) {
+        <mat-icon class="theme-check">check</mat-icon>
+      }
+    </button>
+  }
+</mat-menu>
+
+<div class="separator"></div>
+
+<button mat-icon-button (click)="executeFlow.emit()"
+        matTooltip="Run Flow"
+        matTooltipPosition="below" [disabled]="true">
+  <mat-icon>play_arrow</mat-icon>
+</button>
+
+<button mat-icon-button (click)="resetFlow.emit()"
+        matTooltip="Reset"
+        matTooltipPosition="below">
+  <mat-icon>clearAll</mat-icon>
+</button>
+
+<div class="separator"></div>
+
+<input #importFile type="file" accept="application/json" hidden aria-label="Import flow JSON file" (change)="onFileSelected($event)">
+<button mat-icon-button (click)="openImport(importFile)"
+        matTooltip="Import JSON"
+        matTooltipPosition="below"
+        aria-label="Import flow from JSON">
+  <mat-icon>file_upload</mat-icon>
+</button>
+<button mat-icon-button (click)="exportFlow.emit()"
+        matTooltip="Export JSON"
+        matTooltipPosition="below"
+        aria-label="Export flow to JSON">
+  <mat-icon>file_download</mat-icon>
+</button>

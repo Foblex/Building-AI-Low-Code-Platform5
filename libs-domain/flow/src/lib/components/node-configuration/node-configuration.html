@@ -1,0 +1,36 @@
+<ng-container [formGroup]="formGroup">
+  <div class="configuration-group">
+    <configuration-group-header title="General" />
+    <mat-form-field>
+      <input matInput placeholder="Type name..." formControlName="name" />
+    </mat-form-field>
+    <mat-form-field>
+        <textarea matInput formControlName="description"
+                  placeholder="Type description..."
+                  [cdkTextareaAutosize]="true"
+                  cdkAutosizeMinRows="3"
+                  cdkAutosizeMaxRows="3">
+        </textarea>
+    </mat-form-field>
+  </div>
+  @switch (type()) {
+    @case (eTypes.START) {
+      <start-configuration formControlName="configuration" />
+    }
+    @case (eTypes.AI_PARSER) {
+      <ai-parser-configuration formControlName="configuration" />
+    }
+    @case (eTypes.AI_VALIDATOR) {
+      <ai-validator-configuration formControlName="configuration" />
+    }
+    @case (eTypes.AI_EXECUTOR) {
+      <ai-executor-configuration formControlName="configuration" />
+    }
+    @case (eTypes.CONDITIONAL_BRANCH) {
+      <conditional-branch-configuration formControlName="configuration" />
+    }
+    @case (eTypes.LOGGER) {
+      <logger-configuration formControlName="configuration" />
+    }
+  }
+</ng-container>

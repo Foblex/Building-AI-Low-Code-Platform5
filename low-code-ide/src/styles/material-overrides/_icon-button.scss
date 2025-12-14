@@ -1,0 +1,47 @@
+.mat-mdc-icon-button {
+  --mat-icon-button-container-shape: var(--radius);
+  --mat-icon-button-state-layer-size: var(--control-height);
+  --mat-icon-button-icon-size: 16px;
+  --mat-icon-button-icon-color: hsl(var(--foreground) / 1);
+  --mat-icon-button-disabled-icon-color: hsl(var(--border) / 1);
+
+  &.mat-primary,
+  &.mat-unthemed {
+    border: 1px solid hsl(var(--border) / 1);
+    --mat-icon-button-icon-color: hsl(var(--foreground) / 1);
+
+    &:not(:disabled) {
+      &:hover {
+        border-color: hsl(var(--primary) / 1);
+        --mat-icon-button-icon-color: hsl(var(--primary) / 1);
+      }
+    }
+  }
+
+  &.mat-warn {
+    border: 1px solid hsl(var(--destructive) / 1);
+    --mat-icon-button-icon-color: hsl(var(--foreground) / 1);
+
+    &:not(:disabled) {
+      &:hover {
+        border-color: hsl(var(--primary) / 1);
+        --mat-icon-button-icon-color: hsl(var(--destructive) / 1);
+      }
+    }
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &[disabled] {
+    border-color: hsl(var(--border) / 1);
+  }
+
+  .mat-icon {
+    width: var(--mat-icon-button-icon-size);
+    height: var(--mat-icon-button-icon-size);
+    font-size: var(--mat-icon-button-icon-size);
+    display: block;
+  }
+}

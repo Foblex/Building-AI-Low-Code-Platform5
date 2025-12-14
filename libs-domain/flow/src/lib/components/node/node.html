@@ -1,0 +1,12 @@
+@let node = viewModel();
+<mat-icon class="icon">{{ node.icon }}</mat-icon>
+<span class="name">{{ node.name }}</span>
+<mat-icon class="remove"
+          matTooltip="Remove node"
+          aria-label="Remove node"
+          fDragBlocker
+          (click)="removeNode(node.key)">cancel</mat-icon>
+@if (node.type !== eTypes.LOGGER) {
+  <div fNodeOutput [fOutputId]="node.key" [fOutputMultiple]="true" [isSelfConnectable]="false"></div>
+}
+
