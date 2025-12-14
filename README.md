@@ -10,6 +10,8 @@ This repository contains the source code for the upcoming article **“Building 
 - **IndexedDB persistence** to save and restore flow drafts locally.
 - **Backend stubs** (NestJS + Genkit) for executing flow nodes and AI prompts.
 
+[demo.mov](demo.mov)
+
 ## Getting started
 
 ```bash

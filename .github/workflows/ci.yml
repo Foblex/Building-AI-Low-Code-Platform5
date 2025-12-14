@@ -38,7 +38,7 @@ jobs:
         run: npm ci
 
       - name: Build app
-        run: npx nx build low-code-ide --configuration=production --base-href=/low-code-ide/
+        run: npx nx build low-code-ide --configuration=production --base-href=/Building-AI-Low-Code-Platform5/
 
       - name: Add 404.html fallback
         run: |
