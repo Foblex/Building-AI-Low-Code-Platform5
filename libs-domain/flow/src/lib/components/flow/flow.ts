@@ -43,7 +43,6 @@ import { NodeConfiguration } from '../node-configuration';
 import { ConditionConnectionToolbar } from '../condition-connection-toolbar';
 import { RemoveConnectionButton } from '../remove-connection-button';
 import { provideMutator } from '@foblex/mutator';
-import { FlowGithubCta } from '../github-cta';
 
 const UNDO_REDO_HISTORY_LIMIT = 40;
 
@@ -71,7 +70,6 @@ const UNDO_REDO_HISTORY_LIMIT = 40;
     ConditionConnectionToolbar,
     FConnectionContent,
     RemoveConnectionButton,
-    FlowGithubCta,
   ],
   host: {
     '(keydown)': 'onKeydown($event)',
@@ -230,7 +228,7 @@ export class Flow implements OnInit {
     this._apiService.import(content);
     this._isChangeAfterLoadedResetAndCenter = true;
     this._flow()?.reset();
-    this._canvas()?.resetScaleAndCenter(false);
+   // this._canvas()?.resetScaleAndCenter(false);
   }
 
   protected onKeydown(event: KeyboardEvent): void {

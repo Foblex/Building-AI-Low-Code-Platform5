@@ -10,7 +10,8 @@
     <f-background>
       <flow-background />
     </f-background>
-    <f-line-alignment />
+    <f-magnetic-lines />
+    <f-magnetic-rects />
     <f-selection-area />
 
     <f-canvas fZoom (fCanvasChange)="changeCanvasTransform($event)"
@@ -64,8 +65,6 @@
   <node-palette />
 
   <flow-toolbar fDragBlocker (resetScaleAndCenter)="resetScaleAndCenter()" (fitToScreen)="fitToScreen()" (resetFlow)="resetFlow()" (executeFlow)="executeFlow()" (importFlow)="importFlow($event)" (exportFlow)="exportFlow()" />
-
-  <flow-github-cta />
 
   @if (model.selection?.nodes?.length) {
     <configuration-panel fDragBlocker>
